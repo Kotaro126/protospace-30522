@@ -15,7 +15,7 @@ class PrototypesController < ApplicationController
     if @prototype.save
       redirect_to root_path
     else
-      render :index
+      render :new
     end
   end
 
@@ -25,7 +25,7 @@ class PrototypesController < ApplicationController
   end
 
   def edit
-    unless user_singed_in?
+    unless user_signed_in?
       redirect_to action: :index
     end
   end
